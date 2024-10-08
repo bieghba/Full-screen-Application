@@ -1,8 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "student/com/sap/training/ux402/fullscreen/ux402fullscreen/control/HoverButton"
+    "student/com/sap/training/ux402/fullscreen/ux402fullscreen/control/HoverButton",
+    "sap/m/MessageToast"
 ],
-    function (Controller, HoverButton) {
+    function (Controller, HoverButton, MessageToast) {
         "use strict";
 
         return Controller.extend("student.com.sap.training.ux402.fullscreen.ux402fullscreen.controller.Flights", {
@@ -56,6 +57,12 @@ sap.ui.define([
                 } else {
                     this.getRouter().navTo("overview", true /*no history */)
                 }
+            },
+
+            onHover: function (evt) {
+
+                var sText = this.getOwnerComponent().getModel("i18n").getProperty("msgSeatsAv");
+                MessageToast.show(evt.getSource().getHoverText() + " " + sText, { duration: 1000 });
             }
         });
     });
