@@ -1,9 +1,10 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "student/com/sap/training/ux402/fullscreen/ux402fullscreen/control/HoverButton",
-    "sap/m/MessageToast"
+    "sap/m/MessageToast",
+    "student/com/sap/training/ux402/fullscreen/ux402fullscreen/control/PlaneInfo"
 ],
-    function (Controller, HoverButton, MessageToast) {
+    function (Controller, HoverButton, MessageToast, PlaneInfo) {
         "use strict";
 
         return Controller.extend("student.com.sap.training.ux402.fullscreen.ux402fullscreen.controller.Flights", {
